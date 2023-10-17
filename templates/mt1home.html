@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'bootstrap/css/bootstrap.min.css' %}"
+    />
+    <link rel="stylesheet" href="{% static 'css/mt1home.css' %}" />
+  </head>
+  <body> <nav>
+    <input type="checkbox" id="check" />
+    <label for="check" class="checkbtn">
+      <img src="{%static 'images/Menu.png'%}" width="30px" />
+    </label>
+    <label class="logo"
+      ><img src="{%static 'images/logo13.gif'%}" 
+    /></label>
+    <ul>
+      <li><a href="#" class="not_active">Home</a></li>
+      <li><a href="#takecourse" class="not_active">Courses</a></li>
+      <li><a href="#taketoabout" class="not_active">About</a></li>
+      <li><a href="#con" class="not_active">Contact</a></li>
+      <li><a id="signin" href="#logintext">Sign In</a></li>
+    </ul>
+  </nav>
+  <div class="row">
+    <div class="col-lg-12">
+      <video
+        autoplay
+        loop
+        plays-inline
+        muted
+        type="video/mp4"
+        width="100%"
+        src="{% static 'videos/newbg6.mp4' %}"
+      ></video>
+    </div>
+  </div>
+  <div style="background-color: black; width: 100%; margin: 0;padding-bottom: 30px;">
+    <div class="row">
+      <div
+        class="col-lg-12"
+        style="display: flex; justify-content: center; align-items: center"
+      >
+        <h1
+          style="
+            font-family: 'Josefin Sans';
+            color: orange;
+            text-align: center;
+
+            padding-top: 50px;
+            margin: 0 20px;
+            font-size: 60px;
+          "
+        >
+          LEARN 3D ANIMATION ONLINE
+        </h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div
+        class="col-lg-12"
+        style="display: flex; justify-content: center; align-items: center"
+      >
+        <h3
+          style="
+            font-family: 'Josefin Sans';
+            font-weight: 600;
+            color: orange;
+            margin-top: 0;
+            text-align: center;
+          "
+        >
+          BECOME A 3D CHARACTER ANIMATOR
+        </h3>
+      </div>
+    </div>
+    <div class="row">
+      <div
+        class="col-lg-12"
+        style="display: flex; justify-content: center; align-items: center"
+      >
+        <h2
+          style="
+            font-family: 'poppins';
+            font-weight: 200;
+            color: white;
+            margin: 0px 20px;
+            text-align: center;
+          "
+        >
+          Established in 2005, MCS Creative School is the original online
+          animation school. With mentors from Pixar, Disney, Industrial Light
+          & Magic, and many other major studios, you'll learn animation
+          directly from the pros. Start your journey to become an animator in
+          either the Maya Workshop or Animation Basics.
+        </h2>
+      </div>
+    </div>
+    <div class="row">
+      <div
+        class="col-lg-12"
+        style="display: flex; justify-content: center; align-items: center"
+      >
+        <img
+          src="{%static 'images/start here.webp'%}"
+          style="margin: 0; padding: 0; overflow: hidden;"
+          width="400px"
+        />
+      </div>
+    </div>
+
+      <div
+        class="courseintros"
+        style="display: flex; justify-content: center; align-items: center"
+      >
+        <div class="maincontainer first reveal" style="margin-right: 20px;">
+          <div class="thecard">
+            <div class="thefront maya"><div style="position: relative">
+              <h2 style="text-align: center; color: white; margin-top: 250px">
+                Maya Basics
+              </h2>
+              <h4 style="text-align: center; color: white;" id="taketoabout">
+                6 Week Course
+              </h4>
+              
+            </div></div>
+            <div class="theback" >
+              <div style="position: relative;">
+              <h2>MAYA BASICS</h2>
+              <h3 id="desc">Maya is a powerful 3D computer graphics software developed by Autodesk, widely used in the film, animation, and gaming industries for creating stunning visual effects and animations.</h3>
+              <span style="display: flex;justify-content: center;align-items: center;"><button id="learnmore_btn">Learn more</button></span>
+            </div>
+            </div>
+          </div></div>
+      
+
+
+
+
+
+
+        <div class="maincontainer second reveal" style="margin-left: 40px;">
+          <div class="thecard">
+            <div class="thefront anime"><div style="position: relative">
+              <h2 style="text-align: center; color: white; margin-top: 250px">
+                Animation Basics
+              </h2>
+              <h4 style="text-align: center; color: white;">
+                12 Week Course
+              </h4>
+              
+            </div></div>
+            <div class="theback" >
+              <div style="position: relative;">
+              <h2>Animation Basics</h2>
+              <h3 id="desc">Animation is the art of bringing still images or objects to life through a sequence of carefully crafted, rapidly displayed frames, creating the illusion of motion</h3>
+              <span style="display: flex;justify-content: center;align-items: center;"><button id="learnmore_btn">Learn more</button></span>
+            </div>
+            </div>
+          </div>
+        </div>
+       </div>
+    </div>
+
+    <script>
+      const revealElements = document.querySelectorAll('.reveal');
+    
+      // Intersection Observer to detect when elements are in view
+      const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                  entry.target.style.opacity = 1;
+                  entry.target.style.transform = 'translateY(0)';
+                  observer.unobserve(entry.target); // Stop observing once revealed
+              }
+          });
+      }, {
+          threshold: 0.5, // Adjust this value to control when the reveal happens
+      });
+    
+      // Observe each element with the class "reveal"
+      revealElements.forEach((element) => {
+          observer.observe(element);
+      });</script>
+
+
+  <div class="counter-up">
+<div class="content">
+  <div class="box" >
+    <div class="icon">
+      <i class="fa fa-book"></i>
+    </div>
+    <div class="counter" data-start="0" data-end="250" data-duration="5">0</div>
+    <div class="text">Hours Content</div>
+  </div>
+
+  <div class="box">
+    <div class="icon">
+      <i class="fa fa-handshake-o"></i>
+    </div>
+    <div class="counter" data-start="0" data-end="45" data-duration="5">0</div>
+    <div class="text">Major Studios</div>
+  </div>
+
+
+  <div class="box" id="box">
+    <div class="icon">
+      <i class="fa fa-graduation-cap"></i>
+    </div>
+    <div class="counter" data-start="0" data-end="1100" data-duration="5">0</div>
+    <div class="text">Students Placed</div>
+  </div>
+
+  <div class="box">
+    <div class="icon">
+      <i class="fa fa-plane" ></i>
+    </div>
+    <div class="counter" data-start="0" data-end="560" data-duration="5">0
+    </div>
+    <div class="text">Foreign Students</div>
+  </div>
+</div>
+  </div>
+
+  
+  <script>
+
+    function startCounter(element, start, end, duration) {
+        const range = end - start;
+        const increment = range / (duration * 60);
+        let current = start;
+
+        const updateCounter = () => {
+            current += increment;
+            element.textContent = Math.floor(current) + "+";
+
+            if (current < end) {
+                requestAnimationFrame(updateCounter);
+            }
+        };
+
+        updateCounter();
+    }
+
+
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+        );
+    }
+    function handleScroll() {
+        const counters = document.querySelectorAll(".counter");
+
+        counters.forEach(counterElement => {
+            if (isInViewport(counterElement) && !counterElement.classList.contains("counting")) {
+                counterElement.classList.add("counting"); 
+                const start = parseInt(counterElement.getAttribute("data-start"));
+                const end = parseInt(counterElement.getAttribute("data-end"));
+                const duration = parseInt(counterElement.getAttribute("data-duration"));
+                startCounter(counterElement, start, end, duration);
+                counterElement.style.opacity = 1; 
+            }
+        });
+    }
+window.addEventListener("scroll", handleScroll);
+</script>
+
+<div class="row" ><div class="col-lg-6">
+<h1
+style="
+  
+  color: white;
+text-align: center;
+  font-family: 'poppins';
+  font-weight: 400;
+"
+>
+How MONZ Creative School Works
+</h1>
+<h3
+style="
+ text-align: center;
+  color: white;
+  font-family: 'poppins';
+  font-weight: 200;
+  font-size: 20px;
+"
+>
+Learn 3D animation from working professionals at major animations,
+visual effects, and game studios. Interact with your mentor and
+other animators from all over the world on our custom campus
+platform
+</h3>
+
+<h1
+style="
+
+  color: white;
+  text-align: center;
+  font-family: 'poppins';
+  font-weight: 400;
+"
+>
+More Than An Online School
+</h1>
+<h3
+style="
+ text-align: center;
+  color: white;
+  font-family: 'poppins';
+  font-weight: 200;
+  font-size: 20px;
+"
+>
+MONZ Creative School has a community unlike any other online school,
+where like-minded artists from all over the world shre their passion
+for animation
+</h3></div>
+<div class="col-lg-6" style="display: flex;align-items: center;justify-content: center;padding-bottom: 50px;">
+<div
+class="teachdiv"
+>
+<a href="https://youtu.be/2KWdT4PkXgY?si=B59lS5_IBBlmlBNH" target="_blank" >
+<img src="{%static 'images/Circled Play.png'%}" width="50px"></a>
+</div></div></div>
+<div class="row"><div class="col-lg-12" style="display: flex;justify-content: center;align-items: center;margin-top: 40px;"><button class="button-49" role="button">Know More</button></div></div>
+
+<div class="row"><div class="col-lg-12" style="display: flex;align-items: center;justify-content: center;">
+  <h1 style="font-size: 6vw;color: white;text-align: right;font-weight: 600;font-family: 'Josefin Sans';margin-top: 30px;">Featured Mentors</h1>
+</div></div>
+<div class="row"><div class="col-lg-12" style="display: flex;align-items: center;justify-content: center;">
+  <h3
+          style="
+            font-family: 'poppins';
+            font-size:20px;
+            font-weight: 300;
+            color: white;
+            width: 75%;
+          
+            text-align: justify;
+          "
+        >
+          Our mentors are the heart and soul of MONZ Creative School. Veterann
+          studio pro animators from powerhouses like Pixar, DreamWorks, and
+          Industrial Light & Magic, teach you the ins and outs of production
+          level animation from the very begining, starting with Animation Basics
+          - the first courseof the Core Characters Animation Course.
+        </h3>
+</div></div>
+<div class="row" style="padding: 30px 0;"><div class="col-lg-2" style="display: flex;align-items: center;justify-content: center;">
+  <div class="maincard first reveal3 up" style="margin-right: 20px;">
+    <div class="card">
+      <div class="front m1">
+
+        
+        <h1 style="text-align: center; color:white ; margin-top: 250px;font-family:'poppins';font-weight:700;text-shadow:0 0 20px black;">
+          JOHN BECHAM
+        </h1>
+        <h2 style="text-align: center; color:white ;font-family:'poppins';font-weight:600;text-shadow:0 0 20px black;">
+          SENIOR ANIMATOR
+        </h2>
+        <span style="display: flex;align-items: center;justify-content: center;">
+        <img src="{% static 'images/weta.svg'%}" style="width: 150px;filter: invert(100%);"></span>
+        
+      </div>
+      <div class="back" >
+        <div style="position: relative;">
+          
+        <h2 style="font-family: 'poppins';font-weight: 500;text-align: center;color: white;text-decoration: underline;">ABOUT</h2>
+        <h3 id="desc" style="font-family: 'poppins';font-weight: 300;margin-top: 30px;text-align: center;color: white;">John Becham has been a professional animator since 1994 and is currently a senior animator at Weta Digital. He has a background in 2D animation and joined Weta Digital on the Bee Movie.</h3>
+        <span style="display: flex;justify-content: center;align-items: center;margin-top: 25px;"><img src="{%static 'images/Facebook.png'%}" style="cursor: pointer;" width="30px">
+          <img src="{%static 'images/Whatsapp.png'%}" width="30px" style="cursor: pointer;">
+          <img src="{%static 'images/Twitter.png'%}" width="30px" style="cursor: pointer;">
+          <img src="{%static 'images/Instagram.png'%}" width="30px" style="cursor: pointer;">
+          <img src="{%static 'images/Linkedin.png'%}" width="30px" style="cursor: pointer;"></span>
+      </div>
+      </div></div>
+    </div></div>
+
+
+
+<div class="col-lg-2" style="display: flex;align-items: center;justify-content: center;">
+  <div class="maincard first reveal3 down" style="margin-right: 20px;">
+    <div class="card">
+      <div class="front m2">
+
+        
+        <h1 style="text-align: center; color:white ; margin-top: 250px;font-family:'poppins';font-weight:700;text-shadow:0 0 20px black;">
+          DREW ADAMS
+        </h1>
+        <h2 style="text-align: center; color:white ;font-family:'poppins';font-weight:600;text-shadow:0 0 20px black;">
+          ANIMATOR
+        </h2>
+        <span style="display: flex;align-items: center;justify-content: center;">
+        <img src="{% static 'images/Dreamwork.webp'%}" style="width: 150px;filter: invert(100%);margin-top: 30px;"></span>
+        
+      </div>
+      <div class="back" >
+        <div style="position: relative;">
+          
+        <h2 style="font-family: 'poppins';font-weight: 500;text-align: center;color: white;text-decoration: underline;">ABOUT</h2>
+        <h3 id="desc" style="font-family: 'poppins';font-weight: 300;margin-top: 30px;text-align: center;color: white;">Drew Adams, a professional animator since 2001, currently excels as a 3D animator at DreamWorks Animation, with notable contributions to films like "Atlantis: The Lost Empire" and "How to Train Your Dragon: The Hidden World."</h3>
+        <span style="display: flex;justify-content: center;align-items: center;margin-top: 25px;"><img src="{%static 'images/Facebook.png'%}" style="cursor: pointer;" width="30px">
+          <img src="{%static 'images/Whatsapp.png'%}" width="30px" style="cursor: pointer;">
+          <img src="{%static 'images/Twitter.png'%}" width="30px" style="cursor: pointer;">
+          <img src="{%static 'images/Instagram.png'%}" width="30px" style="cursor: pointer;">
+          <img src="{%static 'images/Linkedin.png'%}" width="30px" style="cursor: pointer;"></span>
+      </div>
+      </div></div>
+    </div></div>
+
+
+
+
+    
+<div class="col-lg-2" style="display: flex;align-items: center;justify-content: center;">
+  <div class="maincard first reveal3 up" style="margin-right: 20px;">
+    <div class="card">
+      <div class="front m3">
+
+        
+        <h1 style="text-align: center; color:white ; margin-top: 250px;font-family:'poppins';font-weight:700;text-shadow:0 0 20px black;">
+          JANE CASSIDY
+        </h1>
+        <h2 style="text-align: center; color:white ;font-family:'poppins';font-weight:600;text-shadow:0 0 20px black;">
+          ANIMATOR
+        </h2>
+        <span style="display: flex;align-items: center;justify-content: center;">
+        <img src="{% static 'images/pixar.svg'%}" style="width: 150px;filter: invert(100%);margin-top: 30px;"></span>
+        
+      </div>
+      <div class="back" >
+        <div style="position: relative;">
+          
+        <h2 style="font-family: 'poppins';font-weight: 500;text-align: center;color: white;text-decoration: underline;">ABOUT</h2>
+        <h3 id="desc" style="font-family: 'poppins';font-weight: 300;margin-top: 30px;text-align: center;color: white;">Jane Cassidy has been a professional animator since 2013 and is currently an animator at Pixar Animation Studios. She graduated from Monz Creative School in 2012 and returned to become a mentor.</h3>
+        <span style="display: flex;justify-content: center;align-items: center;margin-top: 25px;"><img src="{%static 'images/Facebook.png'%}" style="cursor: pointer;" width="30px">
+          <img src="{%static 'images/Whatsapp.png'%}" width="30px" style="cursor: pointer;">
+          <img src="{%static 'images/Twitter.png'%}" width="30px" style="cursor: pointer;">
+          <img src="{%static 'images/Instagram.png'%}" width="30px" style="cursor: pointer;">
+          <img src="{%static 'images/Linkedin.png'%}" width="30px" style="cursor: pointer;"></span>
+      </div>
+      </div></div>
+    </div></div>
+
+
+       
+<div class="col-lg-2" style="display: flex;align-items: center;justify-content: center;">
+  <div class="maincard first reveal3 down" style="margin-right: 20px;">
+    <div class="card">
+      <div class="front m4">
+
+        
+        <h1 style="text-align: center; color:white ; margin-top: 250px;font-family:'poppins';font-weight:700;text-shadow:0 0 20px black;">
+          ASHELY BAY
+        </h1>
+        <h2 style="text-align: center; color:white ;font-family:'poppins';font-weight:600;text-shadow:0 0 20px black;">
+          SENIOR ANIMATOR
+        </h2>
+        <span style="display: flex;align-items: center;justify-content: center;">
+        <img src="{% static 'images/weta.svg'%}" style="width: 150px;filter: invert(100%);"></span>
+        
+      </div>
+      <div class="back" >
+        <div style="position: relative;">
+          
+        <h2 style="font-family: 'poppins';font-weight: 500;text-align: center;color: white;text-decoration: underline;">ABOUT</h2>
+        <h3 id="desc" style="font-family: 'poppins';font-weight: 300;margin-top: 30px;text-align: center;color: white;">Ashley Woods, celebrated for her distinctive artistic style, captivates audiences in comics, illustration, and as a contributor to Weta Digital's groundbreaking visual effects.</h3>
+        <span style="display: flex;justify-content: center;align-items: center;margin-top: 25px;"><img src="{%static 'images/Facebook.png'%}" style="cursor: pointer;" width="30px">
+          <img src="{%static 'images/Whatsapp.png'%}" width="30px" style="cursor: pointer;">
+          <img src="{%static 'images/Twitter.png'%}" width="30px" style="cursor: pointer;">
+          <img src="{%static 'images/Instagram.png'%}" width="30px" style="cursor: pointer;">
+          <img src="{%static 'images/Linkedin.png'%}" width="30px" style="cursor: pointer;"></span>
+      </div>
+      </div></div>
+    </div></div>
+
+
+
+          
+<div class="col-lg-2" style="display: flex;align-items: center;justify-content: center;">
+  <div class="maincard first reveal3 up" style="margin-right: 20px;">
+    <div class="card">
+      <div class="front m5">
+
+        
+        <h1 style="text-align: center; color:white ; margin-top: 250px;font-family:'poppins';font-weight:700;text-shadow:0 0 20px black;">
+          PAUL ALLEN
+        </h1>
+        <h2 style="text-align: center; color:white ;font-family:'poppins';font-weight:600;text-shadow:0 0 20px black;">
+          SENIOR ANIMATOR
+        </h2>
+        <span style="display: flex;align-items: center;justify-content: center;">
+        <img src="{% static 'images/sony.svg'%}" style="width: 150px;filter: invert(100%);"></span>
+        
+      </div>
+      <div class="back" >
+        <div style="position: relative;">
+          
+        <h2 style="font-family: 'poppins';font-weight: 500;text-align: center;color: white;text-decoration: underline;">ABOUT</h2>
+        <h3 id="desc" style="font-family: 'poppins';font-weight: 300;margin-top: 30px;text-align: center;color: white;">Paul Allen has been a professional animator since 1997 and is currently a senior animator at SONY ANIMATION, known for the DOOM video game franchise, and Xbox Game Studios. </h3>
+        <span style="display: flex;justify-content: center;align-items: center;margin-top: 25px;"><img src="{%static 'images/Facebook.png'%}" style="cursor: pointer;" width="30px">
+          <img src="{%static 'images/Whatsapp.png'%}" width="30px" style="cursor: pointer;">
+          <img src="{%static 'images/Twitter.png'%}" width="30px" style="cursor: pointer;">
+          <img src="{%static 'images/Instagram.png'%}" width="30px" style="cursor: pointer;">
+          <img src="{%static 'images/Linkedin.png'%}" width="30px" style="cursor: pointer;"></span>
+      </div>
+      </div></div>
+    </div></div>
+
+
+             
+<div class="col-lg-2" style="display: flex;align-items: center;justify-content: center;">
+  <div class="maincard first reveal3 down" style="margin-right: 20px;">
+    <div class="card">
+      <div class="front m6">
+
+        
+        <h1 style="text-align: center; color:white ; margin-top: 250px;font-family:'poppins';font-weight:700;text-shadow:0 0 20px black;">
+          SKYLER RAY
+        </h1>
+        <h2 style="text-align: center; color:white ;font-family:'poppins';font-weight:600;text-shadow:0 0 20px black;">
+          SENIOR ANIMATOR
+        </h2>
+        <span style="display: flex;align-items: center;justify-content: center;">
+        <img src="{% static 'images/blizarrd.svg'%}" id="takecourse" style="width: 150px;filter: invert(100%);"></span>
+        
+      </div>
+      <div class="back" >
+        <div style="position: relative;">
+          
+        <h2 style="font-family: 'poppins';font-weight: 500;text-align: center;color: white;text-decoration: underline;">ABOUT</h2>
+        <h3 id="desc" style="font-family: 'poppins';font-weight: 300;margin-top: 30px;text-align: center;color: white;">Skyler Ray is a notable contributor at Blizzard Entertainment, recognized for their creative contributions to the company's projects and innovations in the gaming industry.</h3>
+        <span style="display: flex;justify-content: center;align-items: center;margin-top: 25px;"><img src="{%static 'images/Facebook.png'%}" style="cursor: pointer;" width="30px">
+          <img src="{%static 'images/Whatsapp.png'%}" width="30px" style="cursor: pointer;">
+          <img src="{%static 'images/Twitter.png'%}" width="30px" style="cursor: pointer;">
+          <img src="{%static 'images/Instagram.png'%}" width="30px" style="cursor: pointer;">
+          <img src="{%static 'images/Linkedin.png'%}" width="30px" style="cursor: pointer;"></span>
+      </div>
+      </div></div>
+    </div></div>
+</div>
+
+
+
+</div>
+<script>
+  const revealElements3 = document.querySelectorAll('.reveal3');
+
+  // Intersection Observer to detect when elements are in view
+  const observer3 = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+              entry.target.style.opacity = 1;
+              entry.target.style.transform = 'translateY(0)';
+              observer.unobserve(entry.target); // Stop observing once revealed
+          }
+      });
+  }, {
+      threshold: 0.5, // Adjust this value to control when the reveal happens
+  });
+
+  // Observe each element with the class "reveal3"
+  revealElements3.forEach((element) => {
+      observer3.observe(element);
+  });
+</script>
+
+
+
+<div class="row" style="position: relative"><div class="col-lg-12">
+<div id="banner">
+  <video autoplay muted loop> <source src="{%static 'videos/teaching.mp4'%}"></video>
+  <h1>Courses</h1>
+</div>
+</div></div>
+<div class="row"  style="position: relative;background-color: white;"><div class="col-lg-12" style="display:flex;align-items:center;justify-content:center">
+  <h2 id="courses-desc">MONZ Creative School's flagship Character Animation Courses were created by animators from Pixar Animation Studios and Industrial Light & Magic. Our proven curriculum takes students from the fundamentals to film-level character animation in 18 months, half the time of a traditional college program. With instruction from professional mentors who work in the industry, it's no surprise that so many of our alumni have gone on to animate blockbuster movies and AAA video games. Begin your journey and become a character animator today!</h2>
+</div></div>
+<div class="row" style="background-color: white;"><div class="col-lg-12" style="display: flex;align-items: center;justify-content: center;">
+<button id="apply_now">Apply Now</button></div></div>
+<div class="row" style="background-color: white;"><div class="col-lg-4" style="display: flex;align-items: center;justify-content: center">
+  <div class="reveal1 c12">
+  
+  
+  <h1 id="c-head">Animation Basics</h1>
+  <h3 id="c-time">12 Week Course</h3>
+  <h3 id="c-desc">Begin your character animation journey and master the basics.</h3>
+  <span style="display: flex;align-items: center;justify-content: center;">
+  <button id="c-btn">Learn more</button></span> <div class="gradient-overlay"></div>
+</div>
+</div>
+
+<div class="col-lg-4" style="display: flex;align-items: center;justify-content: center">
+  <div  class="reveal1 c13" >
+  
+  
+  <h1 id="c-head">Body Mechanics</h1>
+  <h3 id="c-time">12 Week Course</h3>
+  
+  <h3 id="c-desc">Learn to animate realistic bipedal movement.</h3>
+  <span style="display: flex;align-items: center;justify-content: center;">
+    <button id="c-btn">Learn more</button></span> <div class="gradient-overlay"></div>
+</div>
+</div>
+
+
+
+<div class="col-lg-4" style="display: flex;align-items: center;justify-content: center">
+  <div  class="reveal1 c14" >
+  
+  
+  <h1 id="c-head">Advanced Body Mechanics</h1>
+  <h3 id="c-time">12 Week Course</h3>
+  <h3 id="c-desc">Create exciting and dynamic action sequences.</h3>
+  <span style="display: flex;align-items: center;justify-content: center;">
+    <button id="c-btn">Learn more</button></span> <div class="gradient-overlay"></div>
+</div>
+</div>
+
+</div>
+
+<div class="row" style="background-color: white;"><div class="col-lg-4" style="display: flex;align-items: center;justify-content: center">
+  <div  class="reveal1 c16">
+  
+  
+  <h1 id="c-head">Introduction To Acting</h1>
+  <h3 id="c-time">12 Week Course</h3>
+  <h3 id="c-desc">Make your characters come alive with emotion.</h3>
+  <span style="display: flex;align-items: center;justify-content: center;">
+    <button id="c-btn">Learn more</button></span> <div class="gradient-overlay"></div>
+</div>
+</div>
+
+<div class="col-lg-4" style="display: flex;align-items: center;justify-content: center">
+  <div  class="reveal1 c15" >
+  
+  
+  <h1 id="c-head">Advanced Acting</h1>
+  <h3 id="c-time">12 Week Course</h3>
+  <h3 id="c-desc">Tell a complex, two-person story with dialogue.</h3>
+  <span style="display: flex;align-items: center;justify-content: center;">
+    <button id="c-btn">Learn more</button></span> <div class="gradient-overlay"></div>
+</div>
+</div>
+
+
+
+<div class="col-lg-4" style="display: flex;align-items: center;justify-content: center">
+  <div  class="reveal1 c11" >
+  
+   
+  <h1 id="c-head">Feature Animation Acting & Polish</h1>
+  <h3 id="c-time">12 Week Course</h3>
+  <h3 id="c-desc">Animate a shot and finish your demo reel.</h3>
+  <span style="display: flex;align-items: center;justify-content: center;">
+    <button id="c-btn">Learn more</button></span> <div class="gradient-overlay"></div>
+</div>
+</div>
+
+</div>
+
+  <div class="row" style="background-color: white;"><div class="col-lg-12">
+    <h1 style="font-family: 'poppins';font-size: 50px;font-weight: 500;color: black;text-align: center;margin-top: 40px;">12 WEEKS WORKSHOP</h1>
+  </div></div>
+  <div class="row" style="background-color: white;"><div class="col-lg-12" style="display: flex;justify-content: center;align-items: center;">
+   <h1 style="font-family: 'poppins';font-weight: 400;color: black;text-align: center;width: 75%;margin-top: 30px;">MONZ Creative School offers 12-week workshops with live, weekly Q&As and pre-recorded lectures taught by professional mentors.</h1>
+  </div></div>
+  <div class="row" style="background-color: white;"><div class="col-lg-3" style="display: flex;align-items: center;justify-content: center">
+    <div  class="reveal1 c24">
+    
+    
+    <h1 id="c-head">Creative Animation:Locomotion</h1>
+    <h3 id="c-time">12 Week Course</h3>
+    <h3 id="c-desc">Animate creatures with guidance from pro VFX animators.</h3>
+    <span style="display: flex;align-items: center;justify-content: center;">
+      <button id="c-btn">Learn more</button></span> <div class="gradient-overlay"></div>
+  </div>
+  </div>
+  
+  <div class="col-lg-3" style="display: flex;align-items: center;justify-content: center">
+    <div  class="reveal1 c21" >
+    
+    
+    <h1 id="c-head">Creative Animation: Flight or Fight</h1>
+    <h3 id="c-time">12 Week Course</h3>
+    <h3 id="c-desc">Create dynamic flight and fight sequences with creatures.</h3>
+    <span style="display: flex;align-items: center;justify-content: center;">
+      <button id="c-btn">Learn more</button></span> <div class="gradient-overlay"></div>
+  </div>
+  </div>
+  
+  
+  
+  <div class="col-lg-3" style="display: flex;align-items: center;justify-content: center">
+    <div  class="reveal1 c23" >
+    
+     
+    <h1 id="c-head">Introductio to 3D Character Modeling</h1>
+    <h3 id="c-time">12 Week Course</h3>
+    <h3 id="c-desc">Design your own 3D character, from sketch to final model.</h3>
+    <span style="display: flex;align-items: center;justify-content: center;">
+      <button id="c-btn">Learn more</button></span> <div class="gradient-overlay"></div>
+  </div>
+  </div>
+  <div class="col-lg-3" style="display: flex;align-items: center;justify-content: center">
+    <div  class="reveal1 c22" >
+    
+     
+    <h1 id="c-head">3D Character Modeling for Games</h1>
+    <h3 id="c-time">12 Week Course</h3>
+    <h3 id="c-desc">Prepare your 3D model for real-time games.</h3>
+    <span style="display: flex;align-items: center;justify-content: center;">
+      <button id="c-btn">Learn more</button></span> <div class="gradient-overlay"></div>
+  </div>
+  </div>
+  
+  </div>
+  <div class="row" style="background-color: white;">
+    <div class="col-lg-12" style="display: flex;align-items: center;justify-content: center;">
+      <button class="button-29" role="button" id="taketocontact">Explore More Courses</button>
+    </div>
+        </div>
+
+  <script>// script.js
+    const revealElements1 = document.querySelectorAll('.reveal1');
+    
+    function checkScroll() {
+        revealElements1.forEach((element) => {
+            const elementTop = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+    
+            if (elementTop < windowHeight * 0.75) {
+                element.style.opacity = 1;
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    }
+    
+    // Initially check for elements in view on page load
+    window.addEventListener('load', checkScroll);
+    // Check for elements in view on scroll
+    window.addEventListener('scroll', checkScroll);
+    </script>
+ <div class="row" style="position: relative" id="con">
+  <div class="col-lg-3" style="margin-top: 60px">
+    <h1
+      style="
+        color: white;
+        font-family: 'poppins';
+        text-align: center;
+        font-weight: 600;
+        font-size: 20px;
+      "
+    >
+      BECOME A STUDENT
+    </h1>
+    <span
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+      "
+    >
+      <button
+        id="apply_btn"
+        style="
+          color: green;
+          width: 200px;
+          font-family: 'poppins';
+          cursor: pointer;
+          text-align: center;
+          border: 2px solid green;
+          background-color: transparent;
+          padding: 5px 15px;
+        "
+      >
+        APPLY NOW
+      </button></span
+    >
+    <span
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+      "
+    >
+      <button
+        id="getmore_btn"
+        style="
+          color: yellow;
+          width: 200px;
+          cursor: pointer;
+          font-family: 'poppins';
+          text-align: center;
+          border: 2px solid yellow;
+          background-color: transparent;
+          padding: 5px 15px;
+        "
+      >
+        GET MORE INFO
+      </button></span
+    >
+
+    <h1
+      style="
+        color: white;
+        font-family: 'poppins';
+        text-align: center;
+        margin-top: 50px;
+        font-weight: 600;
+        font-size: 20px;
+      "
+    >
+      NEWSLETTER SIGN UP
+    </h1>
+
+    <span
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+      "
+    >
+      <button
+        id="getmore_btn"
+        style="
+          color: yellow;
+          width: 200px;
+          cursor: pointer;
+          font-family: 'poppins';
+          text-align: center;
+          border: 2px solid yellow;
+          background-color: transparent;
+          padding: 5px 15px;
+        "
+      >
+        SIGN UP
+      </button></span
+    >
+  </div>
+  <div class="col-lg-3" id="about_down">
+    <h1>THE SCHOOL</h1>
+    <h3>Why MONZ Creative School</h3>
+    <h3>Do I Qualify</h3>
+    <h3>Online Campus Tour</h3>
+    <h3>FAQ</h3>
+    <h3>Advanced Placement</h3>
+    <h3>Discounts and Promos</h3>
+  </div>
+
+  <div class="col-lg-3" id="about_down">
+    <h1>RIGS</h1>
+    <h3>Free Maya Rigs</h3>
+    <h3>Animation Characters Rigs</h3>
+  </div>
+  <div class="col-lg-2" id="about_down">
+    <h1>RESOURCES</h1>
+    <h3>Blog</h3>
+    <h3>Webinars</h3>
+    <h3>Ebooks</h3>
+    <h3>Podcasts</h3>
+    <h3>11 Second Club</h3>
+    <h3>Merchandise</h3>
+    <h3>Scholarship Appliation</h3>
+  </div>
+
+
+
+  <div class="col-lg-1" style="margin-top: 50px;">
+ 
+   
+      <img
+        src="{%static 'images/Facebook.png'%}"
+        alt=""
+        id="con-logo"
+      />
+      <img
+        src="{%static 'images/Whatsapp.png'%}"
+        id="con-logo"
+      />
+      <img
+        src="{%static 'images/Gmail.png'%}"
+        alt=""
+        id="con-logo"
+      />
+      <img
+        src="{%static 'images/Instagram.png'%}"
+        alt=""
+        id="con-logo"
+      />
+      <img
+        src="{%static 'images/Linkedin.png'%}"
+        alt=""
+        id="con-logo"
+      />
+    </div>
+  </div>
+</div>
+<h1 id="logintext">LOGIN</h1>
+<div class="row" style="background-color: black;"><div class="col-lg-12" style="display: flex;justify-content: center;">
+  <form action="">
+    <input type="text" placeholder="Username">
+    <input type="text" placeholder="Password">
+    <span style="display: flex;align-items: center;justify-content: center;">
+    <input type="submit" id="submitbtn"></span>
+  </form></div>
+</div>
+    
+
+</body>
+</html>
+</body>
+</html>
